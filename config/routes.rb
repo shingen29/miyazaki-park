@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+  get 'reviews/show/:user_id' => 'reviews#show'
+  get 'reviews/new'
+  post 'reviews' => 'reviews#create'
+
   root 'static_pages#home'
   get '/home', to: 'static_pages#home'
   get '/help', to: 'static_pages#help'
