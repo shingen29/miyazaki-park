@@ -12,7 +12,11 @@ class ReviewsController < ApplicationController
     @review.title = params[:review][:title]
     @review.content = params[:review][:content]
     @review.value = params[:review][:value]
+    @review.user_id = '1'
+    @review.park_id = '1'
     @review.save
+    #puts @review.valid?
+    #p @review.errors.full_messages
     # @review = Review.create(params[:review])
     redirect_to '/reviews/index'
   end
